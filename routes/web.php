@@ -33,7 +33,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
 
 
 $router->group(['prefix' => 'api'], function () use ($router) {
-  $router->get('count',  ['uses' => 'CountsController@showAllCounts']);
+  $router->get('counts',  ['uses' => 'CountsController@showAllCounts']);
 
   $router->get('counts/{id}', ['uses' => 'CountsController@showOneCount']);
 

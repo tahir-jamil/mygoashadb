@@ -12,7 +12,7 @@ class StatisticsController extends Controller
     {
         $users = DB::table('parties')
         ->join('counts', 'parties.id', '=', 'counts.party_id')
-        ->select('country', DB::raw('sum(duroodCount) as total'))
+        ->select('country as filterName', DB::raw('sum(duroodCount) as total'))
         ->groupBy('country')
         ->get();
         
