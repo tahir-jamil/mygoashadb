@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Party extends Model
 {
 
+    public function statistics()
+    {
+        return $this->hasMany('App\Counts');
+    }
+
     /**
      * The attributes that are mass assignable.
      *

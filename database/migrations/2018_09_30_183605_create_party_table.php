@@ -13,7 +13,7 @@ class CreatePartyTable extends Migration
      */
     public function up()
     {
-        Schema::create('part', function (Blueprint $table) {
+        Schema::create('parties', function (Blueprint $table) {
             $table->increments('id')->autoIncrement();
             $table->string('username');
             $table->string('name');
@@ -36,6 +36,25 @@ class CreatePartyTable extends Migration
             $table->timestamps();
         });
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /**
      * Reverse the migrations.

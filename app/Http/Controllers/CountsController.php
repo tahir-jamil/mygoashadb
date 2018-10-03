@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Counts;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CountsController extends Controller
 {
@@ -15,7 +16,10 @@ class CountsController extends Controller
 
     public function showOneCount($id)
     {
-        return response()->json(Counts::find($id));
+        $users = DB::table('counts')
+        ->where('party_id', '=', $id)
+        ->get();
+        return response()->json($users);
     }
 
     public function create(Request $request)

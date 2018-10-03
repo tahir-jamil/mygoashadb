@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Party;
 use Illuminate\Http\Request;
+use Counts;
 
 class PartyController extends Controller
 {
@@ -12,7 +13,7 @@ class PartyController extends Controller
     {
         return response()->json(Party::all());
     }
-
+    
     public function showOneParty($id)
     {
         return response()->json(Party::find($id));

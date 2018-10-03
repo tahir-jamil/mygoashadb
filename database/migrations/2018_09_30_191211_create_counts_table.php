@@ -16,7 +16,8 @@ class CreateCountsTable extends Migration
         Schema::create('counts', function (Blueprint $table) {
             $table->increments('id')->autoIncrement();
             $table->string('duroodCount');
-            $table->string('partyId');
+            $table->string('party_id');
+            $table->string('totalCounts');
             $table->timestamps();
         });
     }

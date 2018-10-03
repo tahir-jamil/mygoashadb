@@ -25,6 +25,8 @@ $router->group(['prefix' => 'api'], function () use ($router) {
   $router->delete('party/{id}', ['uses' => 'PartyController@delete']);
 
   $router->put('party/{id}', ['uses' => 'PartyController@update']);
+
+  $router->get('statistics/', ['uses' => 'PartyController@statistics']);
 });
 
 
@@ -50,4 +52,10 @@ $router->group(['prefix' => 'api'], function () use ($router) {
   $router->delete('applyGoashas/{id}', ['uses' => 'GoashasController@delete']);
 
   $router->put('applyGoashas/{id}', ['uses' => 'GoashasController@update']);
+});
+
+$router->group(['prefix' => 'api'], function () use ($router) {
+  $router->get('statistics/{region}', ['uses' => 'StatisticsController@statistics']);
+  $router->get('totalcounts/', ['uses' => 'StatisticsController@totalcounts']);
+  $router->get('userCounts/{id}', ['uses' => 'StatisticsController@userCounts']);
 });
