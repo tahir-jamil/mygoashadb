@@ -20,6 +20,8 @@ $router->group(['prefix' => 'api'], function () use ($router) {
 
   $router->get('party/{id}', ['uses' => 'PartyController@showOneParty']);
 
+  $router->get('party/{username}/{password}', ['uses' => 'PartyController@login']);
+
   $router->post('party', ['uses' => 'PartyController@create']);
 
   $router->delete('party/{id}', ['uses' => 'PartyController@delete']);
@@ -31,7 +33,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
 
 
 $router->group(['prefix' => 'api'], function () use ($router) {
-  $router->get('counts',  ['uses' => 'CountsController@showAllCounts']);
+  $router->get('count',  ['uses' => 'CountsController@showAllCounts']);
 
   $router->get('counts/{id}', ['uses' => 'CountsController@showOneCount']);
 

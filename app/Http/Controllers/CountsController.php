@@ -11,7 +11,7 @@ class CountsController extends Controller
 
     public function showAllCounts()
     {
-        return response()->json(Counts::all());
+        return response()->json("from the get counts");
     }
 
     public function showOneCount($id)
@@ -26,7 +26,7 @@ class CountsController extends Controller
     {
         $Counts = Counts::create($request->all());
 
-        return response()->json($Counts, 201);
+        return response()->json("working in the counts");
     }
 
     public function update($id, Request $request)

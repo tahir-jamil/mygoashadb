@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Party;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Counts;
 
 class PartyController extends Controller
@@ -14,6 +15,17 @@ class PartyController extends Controller
         return response()->json(Party::all());
     }
     
+    public function login($username, $password)
+    {
+
+        $users = DB::table('parties')
+        ->where('username', '=', $username )
+        ->where('password', '=', $password )
+        ->get();
+        // return view('user.index', ['users' => $users]);
+        return response()->json($users);
+    }
+
     public function showOneParty($id)
     {
         return response()->json(Party::find($id));

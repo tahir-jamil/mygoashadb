@@ -12,9 +12,8 @@ class StatisticsController extends Controller
     {
         $users = DB::table('parties')
         ->join('counts', 'parties.id', '=', 'counts.party_id')
-        ->select($region, DB::raw('sum(duroodCount) as total'))
-        ->groupBy($region)
-        // ->where('party_id', '=', '1')
+        ->select('country', DB::raw('sum(duroodCount) as total'))
+        ->groupBy('country')
         ->get();
         
         // return view('user.index', ['users' => $users]);
