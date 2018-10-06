@@ -6,6 +6,7 @@ use App\Party;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Counts;
+use Illuminate\Support\Facades\Log;
 
 class PartyController extends Controller
 {
@@ -19,9 +20,10 @@ class PartyController extends Controller
     {
 
         $users = DB::table('parties')
-        ->where('username', '=', $username )
-        ->where('password', '=', $password )
+        ->where('username','=',$username)
+        ->where('password','=',$password)
         ->get();
+        
         // return view('user.index', ['users' => $users]);
         return response()->json($users);
     }

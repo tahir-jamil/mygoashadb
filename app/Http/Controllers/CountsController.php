@@ -5,13 +5,15 @@ namespace App\Http\Controllers;
 use App\Counts;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+
 
 class CountsController extends Controller
 {
 
     public function showAllCounts()
     {
-        return response()->json("from the get counts");
+        return response()->json(Goashas::all());
     }
 
     public function showOneCount($id)
@@ -26,7 +28,7 @@ class CountsController extends Controller
     {
         $Counts = Counts::create($request->all());
 
-        return response()->json("working in the counts");
+        return response()->json($Counts, 201);
     }
 
     public function update($id, Request $request)
