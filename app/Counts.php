@@ -13,7 +13,7 @@ class Counts extends Model
      * @var array
      */
     protected $fillable = [  
-        'duroodCount', 'partyId',
+        'duroodCount', 'party_id',
     ];
 
     /**
