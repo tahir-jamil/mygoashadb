@@ -13,7 +13,7 @@ class Goashas extends Model
      * @var array
      */
     protected $fillable = [ 
-         'name', 'fatherName', 'postalAddress', 'union_council', 'Tehsil', 'city', 'district', 'provience', 'country', 'education', 'profession', 'dob', 'nic', 'email', 'phoneRes', 'phoneOff', 'phoneCell', 'holyQuran', 'ashra'
+         'name', 'fatherName', 'postalAddress', 'union_council', 'Tehsil', 'city', 'district', 'provience', 'country', 'education', 'profession', 'dob', 'nic', 'email', 'phoneRes', 'phoneOff', 'phoneCell', 'holyQuran', 'ashra','party_id'
     ];
 
     /**
